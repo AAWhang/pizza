@@ -102,13 +102,17 @@ function pizzaWrite(pizzaObject){             //takes in name of pizza object, r
   $("input:checkbox[name=Topping]:checked").each(function(){
     var toppingChecked = $(this).val();
     pizzaObject.top.push(toppings[toppingChecked]);
-    pizzaObject.topStr = toppingChecked;
+    pizzaObject.topStr.push(toppingChecked);
   });
 
   console.log(pizzaObject.sizeStr);
   console.log(pizzaObject.typeStr);
+  for (var i = 0; i < pizzaObject.topStr.length; i++) {
+    console.log(pizzaObject.topStr[i]);
+  };
   console.log(pizzaObject.price());           //output pizza price
   pizzaObject.top = [];
+  pizzaObject.topStr = [];
 }
 
 
