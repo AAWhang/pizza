@@ -54,7 +54,7 @@ var toppings = {
   onion:      .5
 }
 
-var meatlovers = new Pizza(sizes.large,[],types.stuffed);
+var meatlovers = new Pizza(0,[],0);
 
 function sum( obj ) {                                                   //adds up the values inside an object, checks for arrays and adds up those values as well
   var sum = 0;
@@ -79,6 +79,13 @@ $(document).ready(function(){
 
   $("form#make_pizza").submit(function(event){
     event.preventDefault();
+    var pizzaSize = $('input[name=Size]:checked').val();
+    var pizzaType = $('input[name=pizzaType]:checked').val();
+    console.log(pizzaSize);
+    console.log(pizzaType);
+    meatlovers.size = sizes[pizzaSize];
+    meatlovers.type = types[pizzaType];
+
     $("input:checkbox[name=Topping]:checked").each(function(){
       var toppingChecked = $(this).val();
       meatlovers.top.push(toppings[toppingChecked]);
