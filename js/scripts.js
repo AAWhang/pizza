@@ -74,7 +74,7 @@ function sum( obj ) {                                  //calculates price of piz
     if( obj.hasOwnProperty( el ) ) {
       if (Array.isArray(obj[el])) {
         for (var i = 0; i < obj[el].length; i++) {
-          if(isNaN(obj[el])) {
+          if(isNaN(obj[el][i])) {
           } else {
           sum += obj[el][i];
         }
@@ -105,24 +105,30 @@ function pizzaWrite(pizzaObject){             //takes in name of pizza object, r
     pizzaObject.topStr.push(toppingChecked);
   });
 
-  console.log(pizzaObject.sizeStr);
-  console.log(pizzaObject.typeStr);
+  $("#ticketPizza").html("<li>" + pizzaObject.sizeStr + "</li>" +
+  "<li>" + pizzaObject.typeStr + "</li>");
   for (var i = 0; i < pizzaObject.topStr.length; i++) {
-    console.log(pizzaObject.topStr[i]);
+    $("#ticketPizza").append("<li>" + pizzaObject.topStr[i] + "</li>");
   };
-  console.log(pizzaObject.price());           //output pizza price
+  var pizzaTotal = pizzaObject.price();           //output pizza price
   pizzaObject.top = [];
   pizzaObject.topStr = [];
+  return pizzaTotal;
 }
 
 
 $(document).ready(function(){
-
+var userclicks = 0;
   $("form#make_pizza").submit(function(event){
     event.preventDefault();
-    pizzaWrite(meatlovers);
+    pOrder.name = $("input#order-name").val();
+    pOrder.phone = $("input#order-phone").val();
+    pOrder.pizza.push(meatlovers);
 
-
+    $("#ticketName").html(pOrder.name + " " + pOrder.phone);
+    pOrder.price.push(pizzaWrite(pOrder.pizza[userclicks]));
+    $("#ticketPrice").html("$" + pOrder.price[userclicks]);
+    userclicks++;
   });
 
 
