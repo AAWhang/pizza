@@ -34,8 +34,8 @@ var sizes = {
 
 var types = {
   normal:     0,
-  thin:    1,
-  deep:     3,
+  thin:       1,
+  deep:       3,
   stuffed:    2,
 }
 
@@ -76,12 +76,20 @@ function sum( obj ) {                                                   //adds u
 
 
 $(document).ready(function(){
-meatlovers.top.push(toppings.cheese);
-meatlovers.top.push(toppings.pepperoni);
-meatlovers.top.push(toppings.sausage);
-meatlovers.top.push(toppings.ham);
 
-console.log(meatlovers.price());
+  $("form#make_pizza").submit(function(event){
+    event.preventDefault();
+    $("input:checkbox[name=Topping]:checked").each(function(){
+      var toppingChecked = $(this).val();
+      meatlovers.top.push(toppings[toppingChecked]);
+    });
+
+    console.log(meatlovers.price());
+    meatlovers.top = [];
+  });
+
+
+
 
 
 
