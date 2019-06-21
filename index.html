@@ -17,44 +17,28 @@
         <div class="radio">
           <label>
             <input type="radio" name="Size" value="small" checked>
-            Small
+            Small: $6
           </label>
         </div>
         <div class="radio">
           <label>
             <input type="radio" name="Size" value="medium">
-            Medium
+            Medium: $8
           </label>
         </div>
         <div class="radio">
           <label>
             <input type="radio" name="Size" value="large">
-            Large
+            Large: $10
           </label>
         </div>
         <div class="radio">
           <label>
             <input type="radio" name="Size" value="xlarge">
-            Extra Large
+            Extra Large: $12
           </label>
         </div>
-
-
-        <div class="form-group">
-          <h4>Toppings:</h4>
-          <input type="checkbox" name="Topping" value="cheese" checked> Cheese.
-          <input type="checkbox" name="Topping" value="egg"> Egg.
-          <input type="checkbox" name="Topping" value="pepperoni"> Pepperoni.
-          <input type="checkbox" name="Topping" value="sausage"> Sausage.<br>
-          <input type="checkbox" name="Topping" value="ham"> Ham.
-          <input type="checkbox" name="Topping" value="anchovy"> Anchovy.
-          <input type="checkbox" name="Topping" value="olive"> Olive.
-          <input type="checkbox" name="Topping" value="mushroom"> Mushroom.<br>
-          <input type="checkbox" name="Topping" value="bellPeppers"> BellPeppers.
-          <input type="checkbox" name="Topping" value="pineapple"> Pineapple.
-          <input type="checkbox" name="Topping" value="spinach"> Spinach.
-          <input type="checkbox" name="Topping" value="onion"> Onion.<br>
-        </div>
+        <hr>
 
         <h4>Pizza Type:</h4>
         <div class="radio">
@@ -81,6 +65,29 @@
             Stuffed Crust
           </label>
         </div>
+        <hr>
+
+        <div class="form-group">
+          <h4>Toppings:</h4>
+          <li>Cheese, Egg: $1</li>
+          <input type="checkbox" name="Topping" value="cheese" checked> Cheese.
+          <input type="checkbox" name="Topping" value="egg"> Egg.<br>
+          <li>Meat: $2</li>
+          <input type="checkbox" name="Topping" value="pepperoni"> Pepperoni.
+          <input type="checkbox" name="Topping" value="sausage"> Sausage.
+          <input type="checkbox" name="Topping" value="ham"> Ham.
+          <input type="checkbox" name="Topping" value="anchovy"> Anchovy. <br>
+          <li>Vegetables: $0.50</li>
+          <input type="checkbox" name="Topping" value="olive"> Olive.
+          <input type="checkbox" name="Topping" value="mushroom"> Mushroom.
+          <input type="checkbox" name="Topping" value="bellPeppers"> BellPeppers.
+          <input type="checkbox" name="Topping" value="pineapple"> Pineapple.
+          <input type="checkbox" name="Topping" value="spinach"> Spinach.
+          <input type="checkbox" name="Topping" value="onion"> Onion.<br>
+        </div>
+        <hr>
+
+
         <button type="submit">Create Pizza</button>
       </form>
 
